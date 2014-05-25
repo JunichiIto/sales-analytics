@@ -33,12 +33,19 @@ paid_percentage AS (
 )
 select
   purchase_count,
-  paid_16 || ' (' || paid_16_percent || '%)' as paid_16,
-  paid_16_20 || ' (' || paid_16_20_percent || '%)' as paid_16_20,
-  paid_20 || ' (' || paid_20_percent || '%)' as paid_20,
-  paid_20_25 || ' (' || paid_20_25_percent || '%)' as paid_20_25,
-  paid_25_30 || ' (' || paid_25_30_percent || '%)' as paid_25_30,
-  paid_over_30 || ' (' || paid_over_30_percent || '%)' as paid_over_30
+  paid_16,
+  paid_16_20,
+  paid_20,
+  paid_20_25,
+  paid_25_30,
+  paid_over_30,
+
+  paid_16_percent      AS "Paid 16 %",
+  paid_16_20_percent   AS "Paid 16 20 %",
+  paid_20_percent      AS "Paid 20 %",
+  paid_20_25_percent   AS "Paid 20 25 %",
+  paid_25_30_percent   AS "Paid 25 30 %",
+  paid_over_30_percent AS "Paid over 30 %"
 from paid_distribution
 inner join paid_percentage
 on paid_distribution.id = paid_percentage.id
