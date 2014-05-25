@@ -29,17 +29,6 @@ SELECT
   round(cast(total_book_royalty as dec) / 7, 2) AS total_royalty_avg_per_day,
   sum(total_book_royalty) over (order by "Week") AS cum_total_royalty
 FROM weekly_sales_count
-UNION ALL
-SELECT
-  'Total count',
-  sum(total_paid_for_book),
-  null,
-  null,
-  sum(total_book_royalty),
-  null,
-  null
-FROM
-  weekly_sales_count
 ORDER BY "Week" DESC
     SQL
   end

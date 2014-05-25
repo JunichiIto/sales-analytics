@@ -23,14 +23,6 @@ SELECT
   round(cast(sales_count as dec) / 7, 2) AS sales_avg_per_day,
   sum(sales_count) over (order by "Week") AS cum_total
 FROM weekly_sales_count
-UNION ALL
-SELECT
-  'Total count',
-  sum(sales_count),
-  null,
-  null
-FROM
-  weekly_sales_count
 ORDER BY "Week" DESC
     SQL
   end
