@@ -1,6 +1,9 @@
 %h2= report.formatted_title
 
-= link_to 'Download CSV', formatted_dossier_report_path('csv', report), class: 'download-csv'
+%p
+  = link_to 'Home', root_path
+  |
+  = link_to 'Download CSV', formatted_dossier_report_path('csv', report), class: 'download-csv'
 
 = render_options(report)
 

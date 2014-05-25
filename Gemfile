@@ -16,6 +16,7 @@ gem 'slim-rails'
 gem 'thin'
 gem 'dossier'
 gem 'bootstrap-sass', '~> 3.1.1'
+gem 'jquery-turbolinks'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
