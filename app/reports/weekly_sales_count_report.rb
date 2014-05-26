@@ -1,4 +1,14 @@
 class WeeklySalesCountReport < Dossier::Report
+  class << self
+    def chart_method
+      "line_chart"
+    end
+
+    def chart_data(results)
+      results.map{|row| [row[0], row[2]]}
+    end
+  end
+
   def sql
     <<-SQL
 with sales_view AS (
