@@ -24,3 +24,7 @@
         %tr
           - row.each do |value|
             %th= value
+
+- report_class = report.class
+- if report_class.respond_to? :chart_data
+  = self.send(report_class.chart_method, report_class.chart_data(report.results))

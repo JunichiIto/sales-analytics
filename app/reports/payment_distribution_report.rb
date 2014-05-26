@@ -1,4 +1,12 @@
 class PaymentDistributionReport < Dossier::Report
+  def self.chart_data(results)
+    results.hashes.first.delete_if{|k,_| k =~ /purchase_count|%/ }.map{|k,v| [k, v.to_i]}.to_h
+  end
+
+  def self.chart_method
+    "pie_chart"
+  end
+
   def sql
     <<-SQL
 with sales_view AS (
